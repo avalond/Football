@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_top"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/top_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icn_recommend" />
+
+        <TextView
+            android:id="@+id/viewCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@color/transparency_375"
+            android:drawableLeft="@mipmap/conut"
+            android:paddingLeft="5dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/fl"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/top_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:textSize="10sp"
+        android:layout_alignBottom="@+id/top_title"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/top_description"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/top_time"
+        android:layout_alignStart="@+id/top_title"
+        android:layout_below="@+id/top_title"
+        android:layout_marginTop="20dp"
+        android:maxLines="3"
+        android:textSize="11sp"/>
+
+</RelativeLayout>

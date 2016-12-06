@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="47dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/position"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:singleLine="true" />
+
+    <cn.brision.football.view.CircleImageView
+        android:id="@+id/logo_integral"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/position"
+        android:background="@mipmap/player"
+        android:padding="3dp"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/team"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/logo_integral"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/team_name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/team"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/team_name"
+        android:layout_marginEnd="60dp"
+        android:gravity="center" />
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="14dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:src="@mipmap/data_play" />
+
+</RelativeLayout>

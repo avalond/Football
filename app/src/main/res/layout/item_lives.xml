@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/schedule_item"
+    android:layout_width="match_parent"
+    android:layout_height="89dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:clickable="true"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:id="@+id/status_iv"/>
+
+    <ImageView
+        android:id="@+id/team_home"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="25dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/teamname_home"
+        android:text="德国"
+        android:textColor="@color/black"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/team_home"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="1:2"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/date_time"
+        android:text="14:00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/teamname_away"
+        android:text="巴西"
+        android:textColor="@color/black"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginEnd="15dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/team_away" />
+
+    <ImageView
+        android:id="@+id/team_away"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="25dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="68dp"
+        android:layout_height="23dp"
+        android:id="@+id/status"
+        android:textSize="13dp"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:drawableLeft="@mipmap/lives_yuyue_while"
+        android:text="预约"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/date_time"
+        android:layout_marginBottom="18dp"
+        android:textColor="@color/white"
+        android:background="@drawable/yuyue"/>
+</RelativeLayout>

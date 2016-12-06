@@ -1,0 +1,154 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    //为了解决部分第三方库重复打包了META-INF的问题
+    packagingOptions{
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+//    compileSdkVersion 24
+//    buildToolsVersion "24.0.1"
+//    lintOptions {
+//        abortOnError false
+//    }
+    defaultConfig {
+        applicationId "cn.brision.football"
+//        minSdkVersion 17
+//        targetSdkVersion 24
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        def greenhouseBuild = System.getenv()["GREENHOUSE_BUILD"]
+        if (greenhouseBuild) {
+            def buildNumber = System.getenv()["BUILD_NUMBER"]
+            logger.quiet("BUILD_NUMBER: " + buildNumber)
+            versionCode = Integer.valueOf(buildNumber)
+            versionName = "1.0." + buildNumber
+        } else {
+            versionCode = 1
+            versionName = "1.0"
+        }
+
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi', 'x86_64', 'x86'
+        }
+    }
+    signingConfigs {
+        config {
+            storeFile file('keystore/release.jks')
+            keyAlias 'brision'
+            storePassword 'HYByM2fcd2c7Vemz'
+            keyPassword 'hPEK8HiNXDUz98Fj'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        dev {
+            applicationId 'cn.brision.football'
+            buildConfigField 'String', 'BUGTAGS_APPKEY', '"f24e16e449ed75873932b3bd9e0eff40"'
+            buildConfigField 'int', 'BUGTAGS_TYPE', '1'
+            buildConfigField "boolean", "API_ENV", "true"
+            buildConfigField 'String', 'APPID', '""'
+            buildConfigField 'String', 'CHANNEL_ID', '""'
+
+            buildConfigField 'String', 'LEANCLOUND_APPKEY', '"30HoPUeBLDXXTyal39McuUX6"'
+            buildConfigField 'String', 'LEANCLOUND_APPID', '"cRrehlRuXgSPHDxz8OwwRNFL-gzGzoHsz"'
+        }
+
+        staging {
+            applicationId 'cn.brision.football'
+            buildConfigField 'String', 'BUGTAGS_APPKEY', '"f24e16e449ed75873932b3bd9e0eff40"'
+            buildConfigField 'int', 'BUGTAGS_TYPE', '1'
+            buildConfigField "boolean", "API_ENV", "false"
+
+            buildConfigField 'String', 'APPID', '"EC9291527B3B8A58CE0A45C44427F2E9"'
+            buildConfigField 'String', 'CHANNEL_ID', '"staging"'
+
+            buildConfigField 'String', 'LEANCLOUND_APPKEY', '"30HoPUeBLDXXTyal39McuUX6"'
+            buildConfigField 'String', 'LEANCLOUND_APPID', '"cRrehlRuXgSPHDxz8OwwRNFL-gzGzoHsz"'
+        }
+
+        production {
+            applicationId 'cn.brision.football'
+            buildConfigField 'String', 'BUGTAGS_APPKEY', '"88ed2fc2eec41c443808b06d9a6622a6"'
+            buildConfigField 'int', 'BUGTAGS_TYPE', '0'
+            buildConfigField "boolean", "API_ENV", "false"
+
+            buildConfigField 'String', 'APPID', '"EC9291527B3B8A58CE0A45C44427F2E9"'
+            buildConfigField 'String', 'CHANNEL_ID', '"store"'
+
+            buildConfigField 'String', 'LEANCLOUND_APPKEY', '"uMdDAFbPyYWbyHeQr1WbjaJ4"'
+            buildConfigField 'String', 'LEANCLOUND_APPID', '"v13sftGI0JWEYukXJMJ7P4QL-gzGzoHsz"'
+        }
+    }
+}
+
+//请保证 afterEvaluete 和 apply plugin 的先后顺序
+apply plugin: 'com.bugtags.library.plugin'
+
+bugtags {
+
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile name: 'SMSSDK-2.1.1', ext: 'aar'
+    compile project(path: ':wkvideoplayer')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:recyclerview-v7:25.0.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile 'com.squareup.retrofit2:retrofit-converters:2.0.0'
+
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile files('libs/MobCommons-2016.0830.1940.jar')
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //Rxjava
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    //Talkingdata-Analytics
+    compile files('libs/TalkingData_Analytics_Android_SDK_V2.2.46.jar')
+    compile 'com.android.support:cardview-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
+
+    // LeanCloud 基础包
+    compile ('cn.leancloud.android:avoscloud-sdk:v3.+')
+
+    // avoscloud-sns：LeanCloud 第三方登录包
+    compile ('cn.leancloud.android:avoscloud-sns:v3.+@aar')
+    compile ('cn.leancloud.android:qq-sdk:1.6.1-leancloud')
+
+    compile 'com.github.Zane96:EasyImage:v1.0.3-beta'
+
+}

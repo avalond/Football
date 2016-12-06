@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape">
+
+    <cn.brision.football.view.roundedimageview.RoundedImageView
+        android:id="@+id/big_player_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/player"
+        android:scaleType="fitXY"
+        app:riv_oval="true"/>
+
+    <TextView
+        android:id="@+id/player_name"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/big_player_img"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textColor="@color/green"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/big_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/big_player_img"
+        android:layout_toStartOf="@+id/big_gameclock"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/green"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/big_gameclock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/gameclock"
+        android:textSize="12sp" />
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/schedule_item"
+    android:layout_width="match_parent"
+    android:layout_height="59dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/team_home"
+        android:layout_width="25dp"
+        android:layout_height="27dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/teamname_home"
+        android:layout_marginStart="10dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/teamname_home"
+        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_toEndOf="@+id/date_time"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/team_home"
+        android:layout_toStartOf="@+id/team_away"
+        android:gravity="center"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/teamname_away"
+        android:layout_width="60dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp" />
+
+    <ImageView
+        android:id="@+id/team_away"
+        android:layout_width="25dp"
+        android:layout_height="27dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/teamname_away"
+        android:layout_marginEnd="10dp"
+        android:scaleType="centerCrop"/>
+
+</RelativeLayout>

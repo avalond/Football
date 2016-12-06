@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:background="@mipmap/bg_team">
+
+        <ImageView
+            android:id="@+id/integral_back"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/schdeule_back" />
+
+        <ImageView
+            android:id="@+id/team_logo"
+            android:src="@drawable/defaultlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/integral_back" />
+
+        <TextView
+            android:id="@+id/team_name"
+            android:text="巴西"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/team_logo"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/team_logo"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/player_guanzhu"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/data_title"
+            android:drawableLeft="@mipmap/unfollow"
+            android:gravity="center"
+            android:text="关注"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="3dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/three_tab"
+        layout="@layout/three_tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/relativeLayout2" />
+
+    <include
+        layout="@layout/three_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/three_tab" />
+
+</RelativeLayout>

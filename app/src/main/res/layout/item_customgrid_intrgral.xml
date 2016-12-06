@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_integral"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/position_integral"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:singleLine="true" />
+
+    <ImageView
+        android:id="@+id/logo_integral"
+        android:layout_width="25dp"
+        android:layout_height="27dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/position_integral"
+        android:scaleType="centerInside"
+        android:src="@color/gray_240" />
+
+    <TextView
+        android:id="@+id/team_integral"
+        android:layout_width="110dp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/logo_integral"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/score_integral"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/position_integral"
+        android:layout_alignBottom="@+id/position_integral"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/win_integral"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/win_integral"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/score_integral"
+        android:layout_alignBottom="@+id/score_integral"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/draw_integral"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/draw_integral"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/win_integral"
+        android:layout_alignBottom="@+id/win_integral"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/lose_integral"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/lose_integral"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/draw_integral"
+        android:layout_alignBottom="@+id/draw_integral"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/goal_integral"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/goal_integral"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBaseline="@+id/lose_integral"
+        android:layout_alignBottom="@+id/lose_integral"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/scored_integral"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/scored_integral"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_alignBaseline="@+id/goal_integral"
+        android:layout_alignBottom="@+id/goal_integral"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:gravity="center" />
+
+</RelativeLayout>

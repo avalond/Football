@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_F7"
+    android:clickable="true">
+    <com.android.tedcoder.wkvideoplayer.view.SuperVideoPlayer
+        android:id="@+id/video_player_item_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/supervideo_width"
+        android:layout_alignParentStart="true">
+
+        <View
+            android:id="@+id/bar_height"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"/>
+        <ImageView
+            android:id="@+id/schdeul_back"
+            android:layout_below="@+id/bar_height"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/schdeule_back" />
+    </com.android.tedcoder.wkvideoplayer.view.SuperVideoPlayer>
+
+
+    <RelativeLayout
+        android:id="@+id/share_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/video_player_item_1"
+        android:layout_marginBottom="2dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"
+            android:src="@mipmap/viewcount" />
+
+        <TextView
+            android:id="@+id/viewcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:layout_toEndOf="@+id/imageView2"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/commentscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/sharecount"
+            android:src="@mipmap/schdeule_commentscount" />
+
+        <ImageView
+            android:id="@+id/sharecount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/schdeule_sharecount"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/share_relativelayout">
+
+        <cn.brision.football.view.ptr.PtrClassicFrameLayout xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ptr_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ptr:ptr_duration_to_close="200"
+            ptr:ptr_duration_to_close_header="500"
+            ptr:ptr_keep_header_when_refresh="true"
+            ptr:ptr_pull_to_fresh="true"
+            ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+            ptr:ptr_resistance="1.7"
+            android:background="@color/white">
+
+            <ListView
+                android:id="@+id/schdeule_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/share_relativelayout"
+                android:background="@color/white"
+                android:divider="@color/gray_F7"
+                android:dividerHeight="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+            </ListView>
+        </cn.brision.football.view.ptr.PtrClassicFrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/fifter_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparency_625"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            android:id="@+id/dismiss_fifter"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/bar_gride"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:minHeight="0dp"
+                android:background="@color/transparency"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21dp"
+                    android:padding="6dp"
+                    android:src="@mipmap/fifter_sure"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/filter"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/sure_fifter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:padding="6dp"
+                    android:src="@mipmap/fifter_sure"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/expandlistview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

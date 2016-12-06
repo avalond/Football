@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@color/title_bg"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="65dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/ranking"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/textView5"
+        android:gravity="center_vertical"
+        android:text="@string/team"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/score_integral"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/win_integral"
+        android:gravity="center"
+        android:text="@string/sai"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/win_integral"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/draw_integral"
+        android:gravity="center"
+        android:text="@string/sheng"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/draw_integral"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/lose_integral"
+        android:gravity="center"
+        android:text="@string/ping"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/lose_integral"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@+id/goal_integral"
+        android:gravity="center"
+        android:text="@string/fu"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/goal_integral"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@+id/scored_integral"
+        android:gravity="center"
+        android:text="@string/goal"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/scored_integral"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="@string/integral"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

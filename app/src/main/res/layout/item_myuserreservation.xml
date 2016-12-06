@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<cn.brision.football.view.SwipeItemLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_contact_swipe_root"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    app:bga_sil_bottomMode="pullOut"
+    app:bga_sil_springDistance="20dp"
+    app:bga_sil_swipeDirection="left">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/c_ff6c00">
+
+        <TextView
+            android:id="@+id/item_contact_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="删除"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/yuyue_item"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/team_home"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="25dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/teamname_home"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/team_home"
+                android:singleLine="true"
+                android:text="德国"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="VS"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/teamname_away"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@+id/team_away"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="巴西"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/team_away"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="25dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="68dp"
+                android:layout_height="23dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/yuyue"
+                android:drawableLeft="@mipmap/lives_yuyue_blue"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="已预约"
+                android:textColor="@color/btg_global_text_blue"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/match_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/date_time"
+                android:layout_alignBottom="@+id/date_time"
+                android:layout_marginTop="10dp"
+                android:layout_toStartOf="@+id/score"
+                android:text="世界十二强赛"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/score"
+                android:text="2016-09-15 14:00"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</cn.brision.football.view.SwipeItemLayout>

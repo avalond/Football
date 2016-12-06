@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:id="@+id/teamScheule">
+
+    <TextView
+        android:id="@+id/teamScheule_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:id="@+id/teamScheule_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/teamScheule_homelogo"
+        android:layout_marginEnd="10dp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:id="@+id/teamScheule_homelogo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerInParent="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/defaultlogo"/>
+
+    <TextView
+        android:id="@+id/teamScheule_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:layout_toEndOf="@+id/teamScheule_homelogo"
+        android:layout_marginStart="10dp"/>
+
+    <ImageView
+        android:id="@+id/teamScheule_awaylogo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_toEndOf="@+id/teamScheule_score"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/defaultlogo"/>
+
+    <TextView
+        android:id="@+id/teamScheule_away"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/teamScheule_awaylogo"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"
+        android:singleLine="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

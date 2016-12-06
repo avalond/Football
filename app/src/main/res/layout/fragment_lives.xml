@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_lives" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <cn.brision.football.view.ptr.PtrClassicFrameLayout
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ptr_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            ptr:ptr_duration_to_close="200"
+            ptr:ptr_duration_to_close_header="500"
+            ptr:ptr_keep_header_when_refresh="true"
+            ptr:ptr_pull_to_fresh="true"
+            ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+            ptr:ptr_resistance="1.7">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/live_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_F7" />
+
+
+        </cn.brision.football.view.ptr.PtrClassicFrameLayout>
+
+        <LinearLayout
+            android:id="@+id/live_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/live_bk" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@string/lives_nodata"
+                android:textColor="@color/gray_192"
+                android:textSize="@dimen/toolbar_title_text_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/totop"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="30dp"
+            android:src="@mipmap/lives_totop" />
+    </FrameLayout>
+
+</LinearLayout>

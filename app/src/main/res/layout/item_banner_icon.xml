@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+    <ImageView
+        android:id="@+id/viewpager_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/redsee"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignBottom="@id/viewpager_image"
+
+        android:background="@drawable/shadow_gradient_reserve">
+
+    <TextView
+        android:id="@+id/tv_bannertext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:singleLine="true"
+        android:layout_gravity="center_vertical"
+        android:textColor="@android:color/white" />
+    </FrameLayout>
+</RelativeLayout>

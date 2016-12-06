@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cn.brision.football.view.MyScrollview
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/miss_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <cn.brision.football.view.roundedimageview.RoundedImageView
+                    android:id="@+id/circler_logo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/logo"
+                    app:riv_oval="true" />
+
+                <TextView
+                    android:id="@+id/circler_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="7dp"
+                    android:layout_toEndOf="@+id/circler_logo"
+                    android:text="小圈机器人1号"
+                    android:textColor="@color/title_bg"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/circler_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/circler_name"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/circler_logo"
+                    android:text="2016年7月4号"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/miss_ll"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/ll_one"
+                    android:layout_width="10dp"
+                    android:layout_height="190dp" />
+
+                <com.android.tedcoder.wkvideoplayer.view.SuperVideoPlayer
+                    android:id="@+id/video_player"
+                    android:layout_width="0dp"
+                    android:layout_height="190dp"
+                    android:layout_below="@+id/miss_ll"
+                    android:layout_weight="1">
+
+                </com.android.tedcoder.wkvideoplayer.view.SuperVideoPlayer>
+
+                <View
+                    android:id="@+id/ll_two"
+                    android:layout_width="10dp"
+                    android:layout_height="190dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/circler_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="格里自曼(法国)破门得分"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/huifu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/circler_title"
+                android:layout_marginTop="10dp"
+                android:background="@color/gray_240"
+                android:gravity="center_vertical"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="3dp"
+                android:text="回复" />
+
+
+        <cn.brision.football.view.loadmore.HaoRecyclerView
+            android:id="@+id/circler_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/huifu" />
+        </RelativeLayout>
+
+    </cn.brision.football.view.MyScrollview>
+
+    <LinearLayout
+        android:id="@+id/commenttext_miss"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/gray_240"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center">
+
+            <cn.brision.football.view.ImageEditText
+                android:id="@+id/text"
+                style="@style/login_edittext_style"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:drawablePadding="5dp"
+                android:hint="@string/comment_hint"
+                android:paddingLeft="2dp"
+                android:textSize="16sp"
+                app:leftIconFocus="@drawable/commenticon"
+                app:leftIconNormal="@drawable/commenticon" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/comment_send"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/comment_shape"
+            android:text="@string/comment_send"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

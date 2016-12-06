@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginBottom="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/schdeul_league"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:text="2012欧洲杯小组赛 德国vs法国"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/schdeul_home"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="北京国安"
+            android:singleLine="true"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/schdeul_home_logo"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@+id/schdeul_score"
+            android:layout_marginEnd="80dp"/>
+
+        <TextView
+            android:text="1-2"
+            android:id="@+id/schdeul_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/schdeul_home_logo"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/schdeul_home"
+            android:layout_alignEnd="@+id/schdeul_home"/>
+
+        <ImageView
+            android:id="@+id/schdeul_away_logo"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/schdeul_away"
+            android:layout_alignEnd="@+id/schdeul_away"/>
+
+        <TextView
+            android:id="@+id/schdeul_away"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="长春国安"
+            android:singleLine="true"
+            android:gravity="center_horizontal"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/schdeul_away_logo"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/schdeul_score"
+            android:layout_marginStart="80dp"/>
+
+        <TextView
+            android:text="2016-10-13 00:00"
+            android:id="@+id/schdeul_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/schdeul_score"
+            android:layout_marginTop="15dp"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+</LinearLayout>

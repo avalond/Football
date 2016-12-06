@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.brision.football.view.ptr.PtrClassicFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ptr_frame"
+    android:layout_width="match_parent"
+    android:layout_height="650dp"
+    android:background="@color/white"
+    ptr:ptr_duration_to_close="200"
+    ptr:ptr_duration_to_close_header="500"
+    ptr:ptr_keep_header_when_refresh="true"
+    ptr:ptr_pull_to_fresh="true"
+    ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+    ptr:ptr_resistance="1.7">
+
+    <cn.brision.football.view.loadmore.HaoRecyclerView
+        android:id="@+id/circler_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:overScrollMode="never">
+
+    </cn.brision.football.view.loadmore.HaoRecyclerView>
+</cn.brision.football.view.ptr.PtrClassicFrameLayout>
