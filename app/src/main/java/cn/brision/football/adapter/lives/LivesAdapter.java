@@ -86,7 +86,7 @@ public class LivesAdapter extends BaseAdapter<LivesAdapter.LivesViewHolder>
         dataTime.setText(TimeturnUtils.livesDateFormat33(getItem(position).getStartAt()));
         mScore.setText(getItem(position).getScore());
         switch (getItem(position).getLivesStatus()) {
-            case 2:
+            case 2:   //0 will change have  different view
                 mStatus.setText(mContext.getString(R.string.lives_one));
                 mStatus.setTextColor(mContext.getResources().getColor(R.color.white));
                 mStatus.setCompoundDrawablesWithIntrinsicBounds(mContext.getResources().getDrawable(R.mipmap.lives_yuyue_while), null, null, null);
@@ -109,7 +109,7 @@ public class LivesAdapter extends BaseAdapter<LivesAdapter.LivesViewHolder>
                 statusIv.setVisibility(View.VISIBLE);
                 GlideUtils.get(mContext).getImage(R.mipmap.lives_liveing, statusIv);
                 break;
-            case 0:
+            case 0:  //2   will change have different view
                 mStatus.setVisibility(View.GONE);
                 mScore.setVisibility(View.VISIBLE);
                 statusIv.setVisibility(View.VISIBLE);
@@ -126,7 +126,7 @@ public class LivesAdapter extends BaseAdapter<LivesAdapter.LivesViewHolder>
             @Override
             public void onClick(View view) {
                 switch (getItem(position).getLivesStatus()) {
-                    case 2://可预约
+                    case 2://可预约    //0 will change have different view
                         if (isLoging()) {
                             if (mStatus.getText().equals(mContext.getString(R.string.lives_one))) {
                                 setNotice(getItem(position));
@@ -180,7 +180,7 @@ public class LivesAdapter extends BaseAdapter<LivesAdapter.LivesViewHolder>
                         intent1.putExtra("GameID", getItem(position).getId());
                         mContext.startActivity(intent1);
                         break;
-                    case 0://以结束
+                    case 0://以结束 //2 will change have different view
                         Intent intent = new Intent(mContext, MatchActivity.class);
                         intent.putExtra("GameID", getItem(position).getId());
                         mContext.startActivity(intent);
